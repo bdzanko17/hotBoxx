@@ -23,7 +23,13 @@ node {
             app.push("latest")
         }
         sh 'docker stop $(docker ps -a -q)'
-        sh 'docker run -p 4000:8080 -d bdzanko17/hotboxx'
-        sh 'docker ps'
+    
     }
+
+    stage('Run Container on Dev Server'){
+     def dockerRun = 'docker run -p 4000:8080 -d bdzanko17/hotboxx'
+     sshagent(['dev-server']) {
+       sh "ssh -o StrictHostKeyChecking=no ec2-user@3.83.157.49 ${dockerRun}"
+     }
+   }
 }
