@@ -31,8 +31,7 @@ node {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
-        app.inside{
-            sh 'docker ps'
-        }
+        sh "docker run -p 4000:4000 -d bdzanko17/hotboxx:${env.BUILD_NUMBER}"
+       
     }
 }
