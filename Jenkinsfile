@@ -31,5 +31,8 @@ node {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
+        app.inside{
+            sh 'docker ps'
+        }
     }
 }
