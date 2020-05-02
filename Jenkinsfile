@@ -22,6 +22,7 @@ node {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
+        sh 'docker stop $(docker ps -a -q)'
         sh 'docker run -p 4001:5053 -d bdzanko17/hotboxx'
         sh 'docker ps'
     }
