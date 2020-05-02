@@ -29,6 +29,7 @@ dockerImage.push()
 }
 stage('Cleaning up') {
 steps{
+sh "docker run -p 4000:4000 -d bdzanko17/hotboxx:latest"
 sh "docker rmi $registry:$BUILD_NUMBER"
 }
 }
