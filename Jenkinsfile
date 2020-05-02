@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-        app = docker.build("bdzanko17/hotBoxx")
+        app = docker.build("bdzanko17/hotboxx")
     }
 
     stage('Push image') {
