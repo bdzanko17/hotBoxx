@@ -22,7 +22,7 @@ node {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
-        sh 'docker run -p 4000:4000 -d bdzanko17/hotboxx'
+        sh 'docker run -p 4001:5053 -d bdzanko17/hotboxx'
         sh 'docker ps'
     }
 }
