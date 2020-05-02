@@ -23,7 +23,7 @@ node {
             app.push("latest")
         }
         sh 'docker stop $(docker ps -a -q)'
-        sh 'docker run -p 8080:8080 -d bdzanko17/hotboxx'
+        sh 'docker run -p 4000:8080 -d bdzanko17/hotboxx'
         sh 'docker ps'
     }
 }
