@@ -30,9 +30,9 @@ node {
      def dockerRemove = 'sudo docker rm chat_box'
      def dockerRun = 'sudo docker run --name chat_box -p 4000:4000 -d  bdzanko17/hotboxx'
      sshagent(['dev-server']) {
-       sh "ssh -o StrictHostKeyChecking=no ubuntu@3.83.157.49 ${dockerstop}"
-       sh "ssh -o StrictHostKeyChecking=no ubuntu@3.83.157.49 ${dockerRemove}"
-       sh "ssh -o StrictHostKeyChecking=no ubuntu@3.83.157.49 ${dockerRun}"
+       sh "ssh -o StrictHostKeyChecking=no ubuntu@54.157.39.237 ${dockerstop}"
+       sh "ssh -o StrictHostKeyChecking=no ubuntu@54.157.39.237 ${dockerRemove}"
+       sh "ssh -o StrictHostKeyChecking=no ubuntu@54.157.39.237 ${dockerRun}"
      }
    }
 }
